@@ -4,3 +4,5 @@ from django.http import HttpResponse
 def index(request):
     return HttpResponse("<h1>Hello World, Django<h1>")
 
+def detail(request, my_args):
+    return HttpResponse("You're looking at my_args %s." % my_args)
