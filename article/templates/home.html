@@ -1,6 +1,6 @@
 {% extends "base.html" %}
 {% load custom_markdown %}
-{%  block content %}
+{% block content %}
 <div class="posts">
     {% for post in post_list %}
         <section class="post">
@@ -14,7 +14,7 @@
                     {{ post.date_time }}
                 </a>
 
-                    <a class="post-category post-category-js" href="#">
+                    <a class="post-category post-category-js" href="{% url"search_tag" tag=post.category  %}">
                         {{ post.category }}
                     </a>
                 </p>
