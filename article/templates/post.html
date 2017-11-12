@@ -12,7 +12,7 @@
                 Time: <a class="post-author" href="#">
                 {{ post.date_time|date:"Y /m /d" }}
             </a>
-                <a class="post-category post-category-js" href="#">
+                <a class="post-category post-category-js" href="{% url "search_tag" tag=post.category %}">
                     {{ post.category }}
                 </a>
             </p>
