@@ -45,5 +45,5 @@ def blog_search(request):
 			if len(post_list) == 0:
 				return render(request,'archives.html',{'post_list':post_list,'error':True})
 			else:
-				return render(request, 'archives.html', {'post_list':post_list,'error':True})
+				return render(request, 'archives.html', {'post_list':post_list,'error':False})
 	return redirect('/')

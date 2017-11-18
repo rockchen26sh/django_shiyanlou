@@ -14,15 +14,18 @@ Including another URLconf
 """
 from django.conf.urls import include, url
 from django.contrib import admin
-from article import views
+from article import views as art_views
+from img_db import views as img_views
 
 urlpatterns = [
     url(r'^admin/', include(admin.site.urls)),
-    url(r'^$', views.index),
-    url(r'^test/$', views.test),
-    url(r'^(?P<id>\d+)/$',views.detail, name='detail'),
-    url(r'^archives/$',views.archives, name='archives'),
-    url(r'^aboutme/$',views.about_me, name='about_me'),
-	url(r'^tag(?P<tag>\w+)/$',views.search_tag, name='search_tag'),
-	url(r'^search/$',views.blog_search, name='search')
+    url(r'^$', art_views.index),
+    url(r'^test/$', art_views.test),
+    url(r'^(?P<id>\d+)/$',art_views.detail, name='detail'),
+    url(r'^archives/$',art_views.archives, name='archives'),
+    url(r'^aboutme/$',art_views.about_me, name='about_me'),
+	url(r'^tag(?P<tag>\w+)/$',art_views.search_tag, name='search_tag'),
+	url(r'^search/$',art_views.blog_search, name='search'),
+    url(r'^upload$',img_views.uploadImg,name = 'uploadImg'),
+    url(r'^show$',img_views.showImg, name = 'showImg')
 ]
